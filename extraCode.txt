@@ -1,0 +1,163 @@
+/*
+import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
+const GLManURL = new URL('../assets/GLman.glb', import.meta.url)
+
+const assetLoader = new GLTFLoader();
+assetLoader.load(
+    GLManURL.href,
+    function(gltf){
+        const model = gltf.scene;
+        scene.add(model);
+        model.position.set(-12,4,10);
+        model.scale(5);
+
+    },
+    undefined,
+    function(error){
+        console.error(error);
+    });
+*/
+
+/*
+const axesHelper = new THREE.AxesHelper(5);
+scene.add(axesHelper);
+const gridHelper = new THREE.GridHelper(30);
+scene.add(gridHelper);
+*/
+
+/*
+//green box
+const boxGeo = new THREE.BoxGeometry();
+const boxMat = new THREE.MeshBasicMaterial({ color: 0x00FF00 });
+const box = new THREE.Mesh(boxGeo, boxMat);
+scene.add(box);
+*/
+//Floor
+
+//Sphere
+/*
+const sphereGeo = new THREE.SphereGeometry(4, 40, 40);
+const sphereMat = new THREE.MeshStandardMaterial({ color: 0x0000FF, wireframe: false });
+const sphere = new THREE.Mesh(sphereGeo, sphereMat);
+scene.add(sphere);
+sphere.position.set(-10, 10, 0);
+sphere.castShadow = true;
+*/
+/*
+const sphereMat2 = new THREE.ShaderMaterial({
+    vertexShader: document.getElementById('vertexShader').textContent,
+    fragmentShader: document.getElementById('fragmentShader').textContent,
+});
+const sphere2 = new THREE.Mesh(sphereGeo, sphereMat2);
+scene.add(sphere2);
+sphere2.position.set(-30, 10, 0);
+sphere2.castShadow = true;
+
+*/
+
+//scene.add(ambientLight);
+//SpotLight
+//const spotLight = new THREE.SpotLight(0xFFFFFF);
+//scene.add(spotLight);
+//spotLight.position.set(-20,20,0);
+//spotLight.castShadow = true;
+//const spotLightHelper = new THREE.SpotLightHelper(spotLight);
+//spotLight.decay = 0;
+//scene.add(spotLightHelper);
+
+/*
+const cubeGeo = new THREE.BoxGeometry(4,4,4);
+const cubeMat = new THREE.MeshBasicMaterial({ color: 0xFFFFFF});
+const cube = new THREE.Mesh(cubeGeo, box2Material);
+cube.position.set(0,10,0);
+scene.add(cube);
+//Plane 2
+const plane2Geo = new THREE.PlaneGeometry(10, 10, 30, 30)
+const plane2Mat = new THREE.MeshBasicMaterial({ color: 0x32CD32, side: THREE.DoubleSide, wireframe: true });
+const plane2 = new THREE.Mesh(plane2Geo, plane2Mat);
+scene.add(plane2);
+plane2.position.set(10,10,15);
+*/
+
+/*
+const gui = new dat.GUI();
+const guiOptions = {
+    SphereColor: '#0000FF',
+    wireframe: false,
+    speed : 0.01,
+    angle: 0.2,
+    penumbra: 0,
+    intensity : 1
+};
+gui.addColor(guiOptions, 'SphereColor').onChange(function (e) {
+    SunSphere.material.color.set(e);
+});
+
+gui.add(guiOptions, 'wireframe').onChange(function (e) {
+    sphere.material.wireframe = e;
+});
+
+gui.add(guiOptions, 'speed', 0,.1);
+
+gui.add(guiOptions, 'angle', 0, 1);
+gui.add(guiOptions, 'penumbra', 0, 1);
+gui.add(guiOptions, 'intensity', 0, 1);
+
+var bounceAngle = 0;
+*/
+
+ANIMATION
+/*    box.rotation.x = time / 1000;
+    box.rotation.y = time / 1000;
+
+    bounceAngle += guiOptions.speed;
+    sphere.position.y =  10*Math.abs(Math.sin(bounceAngle));
+
+    spotLight.angle = guiOptions.angle;
+    spotLight.penumbra = guiOptions.penumbra;
+    spotLight.intensity = guiOptions.intensity;
+    spotLightHelper.update();
+
+    plane2.geometry.attributes.position.array[0] = 5 * Math.random();
+    plane2.geometry.attributes.position.array[1] = 5 * Math.random();
+    plane2.geometry.attributes.position.array[2] = 5 * Math.random();
+    const lastZPos = plane2.geometry.attributes.position.array.length-1;
+    plane2.geometry.attributes.position.array[lastZPos] = 5 * Math.random();
+
+    plane2.geometry.attributes.position.needsUpdate = true;
+*/
+
+FOG and CLICK mechanic
+
+//scene.fog = new THREE.Fog(0xFFFFFF,0,200);
+//scene.fog = new THREE.FogExp2(0xFFFFFF, .01);
+/*
+const mousePos = new THREE.Vector2();
+
+window.addEventListener('mousemove',function(e){
+    mousePos.x = (e.clientX / width) * 2 - 1;
+    mousePos.y = - (e.clientY / height) * 2 + 1;
+});
+
+const rayCaster = new THREE.Raycaster();
+
+ rayCaster.setFromCamera(mousePos, camera);
+ const intersectObj = rayCaster.intersectObjects(scene.children);
+ //console.log(intersectObj);
+
+
+for (var i = 0; i < intersectObj.length; i++)
+{
+    if(intersectObj[i].object.id == sphere.id)
+    {
+        intersectObj[i].object.material.color.set(0xFF0000);
+    }
+
+    if(intersectObj[i].object.name === box2Material.name)
+    {
+        intersectObj[i].object.rotation.x = time /1000;
+        intersectObj[i].object.rotation.y = time /1000;
+
+    }
+}
+*/
